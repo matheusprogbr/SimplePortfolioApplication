@@ -159,7 +159,7 @@ body{
   grid-template-columns: repeat(3,80px);
   align-items: center;
   justify-content: center;
-
+  grid-gap: 1rem;
   margin-top: 2rem;
 }
 
@@ -205,6 +205,10 @@ body{
 
 .card .subtitle{
   margin-bottom: 1rem;
+}
+
+.card{
+  display: grid;
 }
 
 .card-info{

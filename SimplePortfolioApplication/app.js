@@ -3,20 +3,26 @@ const app = express();
 
 const nunjucks = require('nunjucks');
 
+const videos = require('./data.js');
+const data = require('./about_data.js');
+
 app.use(express.static('public'));
 
-app.set('view engine','html');
+app.set('view engine','njk');
 
 nunjucks.configure('views', {
-  express:app
+  express:app,
+  autoescape: false
 });
 
 app.get('/',(req,res) => {
-  return res.render('index');
+
+
+  return res.render('about', {item:data});
 });
 
 app.get('/portfolio', (req,res) => {
-  res.render('portfolio');
+  return res.render('portfolio', {items:videos, about:data});
 });
 
 app.listen(5000, () => {

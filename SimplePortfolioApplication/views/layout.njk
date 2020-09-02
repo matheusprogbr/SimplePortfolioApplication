@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% block head %}
+
+  {% endblock %}
+  <link rel="shortcut icon" href="/fox.svg" type="image/x-icon">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="header">
+      <div class="container">
+        <nav class="menu">
+          <ul>
+            <li><a href="/">Sobre</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/">Contato</a></li>
+          </ul>
+        </nav>
+      </div> <!-- container end -->
+    </header>
+  
+    {% block content %}
+
+    {% endblock %}
+
+    <footer class="footer">
+      <span>Com 💚 matheusprogrj </span>
+    </footer>
+    
+
+</body>
+</html>

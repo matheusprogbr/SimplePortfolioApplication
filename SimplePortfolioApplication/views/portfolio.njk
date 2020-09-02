@@ -1,0 +1,54 @@
+{% extends 'layout.njk' %}
+
+{% block head %}
+  <title>Portfolio - {{about.name}}</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+  <section class="wrapper container">
+    <div class="description">
+      <h1 class="title">Portfolio</h1>
+    </div> 
+
+    <div class="cards">
+
+      {% for item in items %} 
+
+        <div class="card" id={{item.id}}>
+          <div class="card-image">
+            <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" 
+                  alt="Thumbnail do vídeo {{item.title}}">
+          </div><!-- card-image end -->
+          <div class="card-content">
+            <h2 class="subtitle">{{item.title}}</h2>
+          </div><!-- card-content end -->
+          <div class="card-info">
+            <span>{{item.duration}}</span>
+            <span class="card-price">{{item.price}}</span>
+          </div><!-- card-info end -->
+        </div><!-- card end -->
+
+      {% endfor %} {# nunjucks for loop end #}
+
+    </div><!-- cards end -->
+
+  </section>
+
+  <div class="modal-overlay">
+    <div class="modal">
+      <a class="close-modal">
+        <i class="material-icons">close</i>
+      </a>
+      <div class="modal-content">
+        <iframe src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div><!-- modal end -->
+  </div><!-- modal-overlay end -->
+
+  <script src="script.js"></script>
+
+{% endblock %}
