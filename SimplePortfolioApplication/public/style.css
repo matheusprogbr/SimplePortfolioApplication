@@ -251,50 +251,6 @@ body{
   border-radius: 1rem;
 }
 
-
-/* MODAL */
-.modal-overlay{
-  background-color: rgba(0,0,0,0.7);
-
-  width: 100%;
-  height: 100%;
-
-  position: fixed;
-  top: 0;
-
-  opacity: 0;
-  visibility: hidden;
-
-  transition: all .5s ease-in-out;
-}
-
-.modal{
-  background-color: var(--main-color);
-
-  width: 80vw;
-  height: 70vh;
-
-  margin: 15vh auto;
-
-  position: relative;
-}
-
-.close-modal{
-  color:#7159c1;
-
-  position: absolute;
-  right: .4rem;
-  top: .4rem;
-
-  cursor: pointer;
-
-  transition: all .5s ease-in-out;
-}
-
-.close-modal:hover{
-  color: #282a36;
-}
-
 iframe{
   width: 100%;
   height: 90%;
@@ -304,12 +260,41 @@ iframe{
   position: absolute;
 }
 
+/* VIDEO PAGE */
+.video{
+  margin: 1rem auto 0 auto;
 
-/* MODAL.ACTIVE */
+  max-width: 90vw;
+}
 
-.modal-overlay.active{
-  opacity: 1;
-  visibility: visible;
+.video .card{
+  cursor: initial;
+  text-align: initial;
+}
+
+.card-video{
+  position: relative;
+
+  width: 100%;
+  padding-top: 62.5%;
+}
+
+.card-video iframe{
+  width: 100%;
+  height: 90%;
+
+  position: absolute;
+  top: 0;
+
+}
+
+.video .card-content,
+.video .card-info{
+  text-align: center;
+}
+
+.video .card-content{
+  margin-top: -1rem;
 }
 
 
@@ -333,6 +318,10 @@ iframe{
     height: 90vh;
 
     margin: 5vh auto;
+  }
+
+  .video{
+    max-width: 60vw;
   }
 }
 
