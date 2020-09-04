@@ -12,7 +12,8 @@ app.set('view engine','njk');
 
 nunjucks.configure('views', {
   express:app,
-  autoescape: false
+  autoescape: false,
+  noCache:true
 });
 
 app.get('/',(req,res) => {
@@ -24,6 +25,24 @@ app.get('/',(req,res) => {
 app.get('/portfolio', (req,res) => {
   return res.render('portfolio', {items:videos, about:data});
 });
+
+app.get('/video', (req,res) => {
+  const id = req.query.id;
+
+  const video = videos.find(function(video){
+    if(video.id === id){
+      return true;
+    }
+  });
+  
+  if(!video){
+    return res.send('Video not found!');
+  }
+
+  return res.render('video', {video});
+
+  res.send(id);
+})
 
 app.listen(5000, () => {
   console.log('Server is running!');

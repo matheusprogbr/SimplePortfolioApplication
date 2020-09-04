@@ -19,9 +19,12 @@
       {% for item in items %} 
 
         <div class="card" id={{item.id}}>
-          <div class="card-image">
+          <div class="card-image {{ 'featured-wrapper' if item.featured }}">
             <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" 
                   alt="Thumbnail do vídeo {{item.title}}">
+                  {% if item.featured %}
+                    <div class="featured">Featured</div>
+                  {% endif %}
           </div><!-- card-image end -->
           <div class="card-content">
             <h2 class="subtitle">{{item.title}}</h2>
