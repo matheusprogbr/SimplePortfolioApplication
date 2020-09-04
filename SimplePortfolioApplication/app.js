@@ -17,8 +17,6 @@ nunjucks.configure('views', {
 });
 
 app.get('/',(req,res) => {
-
-
   return res.render('about', {item:data});
 });
 
@@ -39,7 +37,7 @@ app.get('/video', (req,res) => {
     return res.send('Video not found!');
   }
 
-  return res.render('video', {video});
+  return res.render('video', {item:video});
 
   res.send(id);
 })
