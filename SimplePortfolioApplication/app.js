@@ -38,8 +38,7 @@ app.get('/video', (req,res) => {
   }
 
   return res.render('video', {item:video});
-
-  res.send(id);
+  
 })
 
 app.listen(5000, () => {
