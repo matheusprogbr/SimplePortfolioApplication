@@ -29,6 +29,18 @@ app.get('/portfolio', (req,res) => {
 app.get('/video', (req,res) => {
   const id = req.query.id;
 
+  const video = videos.find(function(video){
+    if(video.id === id){
+      return true;
+    }
+  });
+  
+  if(!video){
+    return res.send('Video not found!');
+  }
+
+  return res.render('video', {video});
+
   res.send(id);
 })
 
